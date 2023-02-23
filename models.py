@@ -16,7 +16,7 @@ class Todos:
     return self.todos[id]
 
   def create(self, data):
-    data.pop('csrf_token')
+    # data.pop('csrf_token')
     self.todos.append(data)
 
   def save_all(self):
@@ -31,15 +31,31 @@ class Todos:
 
 todos = Todos()
 
-todos = [
-    {
+todos.create(
+  data={
       'title': 'Покупки',
       'description': 'Молоко, яйця, мука, олія, туалетний папір (якщо звичайно від буде в магазині)',
       'done': False
-    },
-    {
+    } 
+  )
+
+todos.create(
+  data={
       'title': 'Виконати завдання з Python',
       'description': 'Підготувати проект із модуля та надіслати його ментору',
       'done': False
-    }
-]
+    } 
+  )
+
+# todos = [
+#     {
+#       'title': 'Покупки',
+#       'description': 'Молоко, яйця, мука, олія, туалетний папір (якщо звичайно від буде в магазині)',
+#       'done': False
+#     },
+#     {
+#       'title': 'Виконати завдання з Python',
+#       'description': 'Підготувати проект із модуля та надіслати його ментору',
+#       'done': False
+#     }
+# ]
